@@ -1,0 +1,40 @@
+#myDiv2{
+    position: absolute;
+    padding-left : 50px;
+    padding-right : 50px;
+    left: 50%;
+    margin-left: -150px;
+    border: 3px solid navy;
+    background-color:lightgoldenrodyellow;
+    color:firebrick;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  
+  }
+  .jumbotron {
+      background-image: url(../../../assets/JumboBgImg.jpeg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+    }
+    
+    h1{
+      font-weight: bolder;
+      color:navy;
+    }
+
+    h2{
+      font-weight:bold;
+      color:navy;
+      text-align: center;
+    }
+    
+    p{
+      font-family: monospace;
+      font-weight: bold;
+      color:blue
+    
+    }
+    
+    

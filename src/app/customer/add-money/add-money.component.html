@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">CS</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button (click)="logout()" class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+    </form>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-3">Courier Service</h1>
+  <p class="lead">An easy doorstep service for you..</p>
+</div>
+
+<div id="myContent">
+  <div id="myDiv1">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/book-my-courier">Book My Courier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/view-profile">View Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/update-profile">Update Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/track-my-order">Track my Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/my-wallet">My Wallet</a>
+      </li>
+    </ul>
+  </div>
+  <div id="myDiv2">
+    <h2>Add Money</h2>
+    <form novalidate [formGroup]="addmoneyform">
+      <div class="form-group">
+        <label for="customerWalletAmount">Enter amount to be added (Will be deducted from Linked Bank A/c with Mobile Number)</label>
+        <input type="text" name="customerWalletAmount" class="form-control" formControlName="customerWalletAmount"
+        [ngClass]="{ 'is-invalid':customerWalletAmount.errors && (customerWalletAmount.touched || customerWalletAmount.dirty),'is-valid' : customerWalletAmount.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="customerWalletAmount.errors?.['required']">Amount is required </strong>
+        </div>
+      </div>
+      <button type='submit' [disabled]="addmoneyform.invalid" (click)="addMoney()"
+        class="btn btn-success">Add Money</button>
+
+    </form>
+  </div>
+</div>

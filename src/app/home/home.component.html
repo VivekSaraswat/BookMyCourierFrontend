@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+          <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope d-flex align-items-center"><a routerLink="mailto:contact@example.com">courier@service.com</a></i>
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 9876543210</span></i>
+          </div>
+          <div class="social-links d-none d-md-flex align-items-center">
+            <a routerLink="/" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a routerLink="/" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a routerLink="/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a routerLink="/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </section>
+      <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+    
+          <h1 class="logo"><a routerLink="index.html">CourierService.</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a routerLink="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto " routerLink="/" routerLinkActive="active">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto " href="#pricing">Pricing </a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li class="dropdown"><a routerLink="" routerLinkActive="active"><span><b>Register ></b></span><i class="bi bi-chevron-down"></i></a>
+                <ul>
+        
+                 <li><a routerLink="/register-admin" routerLinkActive="active">Admin</a></li>
+                  <li><a routerLink="/register-delivery-person" routerLinkActive="active">Delivery Person</a></li>
+                  <li><a routerLink="/register-customer" routerLinkActive="active">Customer</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a routerLink="" routerLinkActive="active"><span><b>Login ></b></span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  
+                  <li><a routerLink="/login-admin" routerLinkActive="active">Admin</a></li>
+                  <li><a routerLink="/login-delivery-person" routerLinkActive="active">Delivery Person</a></li>
+                  <li><a routerLink="/login" routerLinkActive="active">Customer</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+    
+        </div>
+      </header>
+
+
+      <section id="home" class="d-flex align-items-center">
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+          <h1>Welcome to <span>CourierService</span></h1>
+          <h2>An easy doorstep service for you..</h2>
+          <div class="d-flex">
+            
+            
+             <div></div>
+            <a routerLink="/about" routerLinkActive="active" class="btn-get-started scrollto">Get Started</a>
+            <a routerLink="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+             
+          </div>
+        </div>
+      </section>
+
+    
+      
+<!--***ABOUT*****  -->
+<section id="about" class="about section-bg" >
+  <div class="container">
+
+    <div class="section-title">
+      <h2>About</h2>
+      <h3>Find Out More <span>About Us</span></h3>
+      <p>Adorn your Business Deliveries</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <img src="../../assets/about.jpg" class="img-fluid" alt="Not avialable">
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <h3>With the progress of time and technology, no distance is too large for you to send a package over to your loved ones. From one end of the world to the other, there’s no losing out on sending a token of love to your loved ones.</h3>
+        <p class="fst-italic">
+          Delivery partners and courier companies have been instrumental for a very long time now in connecting people with their efficient and reliable delivery systems. 
+        </p>
+        <ul>
+          <li>
+            <i class="bx bx-store-alt"></i>
+            <div>
+              
+              <p>To be a part of this massive industry of courier companies, you need the help of proper branding skills and slogans, which will set you apart from the rest and make your brand familiar to the people.</p>
+            </div>
+          </li>
+          
+        </ul>
+        <p>
+          People's lifestyle is changing day by day. Nowadays, people prefer buying food online, doing grocery shopping online, and doing transactions online. The world is slowly becoming a global village, and digital means of buying and selling are becoming the new normal.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>    
+
+<!-- ****TEAM****** -->
+
+<section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Team</h2>
+        <h3>Our Hardworking <span>Team</span></h3>
+        <p>From Capgemini JavaScript Batch </p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a routerLink=""><i class="bi bi-twitter"></i></a>
+                <a routerLink=""><i class="bi bi-facebook"></i></a>
+                <a routerLink=""><i class="bi bi-instagram"></i></a>
+                <a routerLink=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Anmol Deep</h4>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a routerLink=""><i class="bi bi-twitter"></i></a>
+                <a routerLink=""><i class="bi bi-facebook"></i></a>
+                <a routerLink=""><i class="bi bi-instagram"></i></a>
+                <a routerLink=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Vivek Saraswat</h4>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a routerLink=""><i class="bi bi-twitter"></i></a>
+                <a routerLink=""><i class="bi bi-facebook"></i></a>
+                <a routerLink=""><i class="bi bi-instagram"></i></a>
+                <a routerLink=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Pravej Alam</h4>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a routerLink=""><i class="bi bi-twitter"></i></a>
+                <a routerLink=""><i class="bi bi-facebook"></i></a>
+                <a routerLink=""><i class="bi bi-instagram"></i></a>
+                <a routerLink=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Shiv Lal</h4>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+<!-- ***PRICING**** -->
+<section id="pricing" class="pricing">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Pricing</h2>
+      <h3>Check our <span>Pricing</span></h3>
+      <p>One of the most affordable Delivery Service in India</p>
+    </div>
+<!-- [Normal,Urgent,Confidential,Fragile] -->
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="box">
+          <h3>Normal</h3>
+          <h4><sup>₹</sup>100<span> / item</span></h4>
+          <ul>
+            <li>Money Order</li>
+            <li>Plastic Items</li>
+            <li>Notebooks</li>
+            <li class="na">Electronics</li>
+            <li class="na">Glass Items</li>
+          </ul>
+          <div class="btn-wrap">
+            <a routerLink="/" class="btn-buy">Rating:- 3/5</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+        <div class="box featured">
+          <h3>Urgent</h3>
+          <h4><sup>₹</sup>250<span> / item</span></h4>
+          <ul>
+            <li>Documents</li>
+            <li>Books</li>
+            <li>Medicines </li>
+            <li>Reports</li>
+            <li class="na">Electronics</li>
+          </ul>
+          <div class="btn-wrap">
+            <a routerLink="/" class="btn-buy">Rating:- 5/5</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+        <div class="box">
+          <h3>Confidential</h3>
+          <h4><sup>₹</sup>300<span> / item</span></h4>
+          <ul>
+            <li>Documents</li>
+            <li>Books</li>
+            <li>Records</li>
+            <li>Medical Reports</li>
+            <li>Classified</li>
+          </ul>
+          <div class="btn-wrap">
+            <a routerLink="/" class="btn-buy">Rating:- 4/5</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+        <div class="box">
+          
+          <h3>Fragile</h3>
+          <h4><sup>₹</sup>500<span> / item</span></h4>
+          <ul>
+            <li>Glass Items</li>
+            <li>Marble</li>
+            <li>Painting</li>
+            <li>Electronics</li>
+            <li>Statues</li>
+          </ul>
+          <div class="btn-wrap">
+            <a routerLink="/" class="btn-buy">Rating:- 5/5</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

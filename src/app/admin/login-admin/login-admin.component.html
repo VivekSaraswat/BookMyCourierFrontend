@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <h1 class="display-3">Courier Service</h1>
+    <p class="lead">An easy doorstep service for you..</p>
+  </div>
+
+
+<div id="myDiv2" >
+    <form novalidate [formGroup]="loginadminform"  (ngSubmit)="loginAdmin()">
+        <h2>Login Admin</h2>
+        <div class="form-group">
+            <label for="adminUsername">Admin Username</label>
+            <input type="text" name="adminUsername" class="form-control" formControlName="adminUsername"
+                [ngClass]="{ 'is-invalid':adminUsername.errors && (adminUsername.touched || adminUsername.dirty),'is-valid' :adminUsername.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="adminUsername.errors?.['required']">Username is required </strong>
+                <strong *ngIf="adminUsername.errors?.['minlength']">Username minimum length is 5 characters </strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="adminPassword">Password</label>
+            <input type="password" name="adminPassword" class="form-control" formControlName="adminPassword"
+                [ngClass]="{ 'is-invalid':adminPassword.errors && (adminPassword.touched || adminPassword.dirty),'is-valid' :adminPassword.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="adminPassword.errors?.['required']">Password is required </strong>
+                <strong *ngIf="adminPassword.errors?.['minlength']">Password minimum length is 5 characters </strong>
+            </div>
+        </div>
+        <button type='submit' [disabled]="loginadminform.invalid" 
+            class="btn btn-primary">Login</button>
+
+    </form>
+</div>
+
+

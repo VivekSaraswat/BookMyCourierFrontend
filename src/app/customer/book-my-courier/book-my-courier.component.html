@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">CS</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button  (click)="logout()"  class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+    </form>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-3">Courier Service</h1>
+  <p class="lead">An easy doorstep service for you..</p>
+</div>
+
+<div id="myContent">
+  <div id="myDiv1">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/book-my-courier">Book My Courier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/view-profile">View Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/update-profile">Update Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/track-my-order">Track my Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/my-wallet">My Wallet</a>
+      </li>
+    </ul>
+  </div>
+  <div id="myDiv2">
+    <h2>Book My Courier</h2>
+    <form novalidate [formGroup]="bookmycourierform">
+      <div class="form-group">
+        <label for="customerId">Customer ID</label>
+        <input type="text" name="customerId" class="form-control" formControlName="customerId" readonly
+          [ngClass]="{ 'is-invalid':customerId.errors && (customerId.touched || customerId.dirty),'is-valid' :customerId.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="customerId.errors?.['required']">CustomerId is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pickupLocation">Pickup Location</label>
+        <input type="text" name="pickupLocation" class="form-control" formControlName="pickupLocation" readonly
+          [ngClass]="{ 'is-invalid':pickupLocation.errors && (pickupLocation.touched || pickupLocation.dirty),'is-valid' :pickupLocation.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="pickupLocation.errors?.['required']">Pickup Location is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pickupAddress">Pickup Address</label>
+        <input type="text" name="pickupAddress" class="form-control" formControlName="pickupAddress"
+          [ngClass]="{ 'is-invalid':pickupAddress.errors && (pickupAddress.touched || pickupAddress.dirty),'is-valid' :pickupAddress.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="pickupAddress.errors?.['required']">Pickup Address is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="endLocation">End Location</label>
+        <input type="text" name="endLocation" class="form-control" formControlName="endLocation"
+          [ngClass]="{ 'is-invalid':endLocation.errors && (endLocation.touched || endLocation.dirty),'is-valid' :endLocation.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="endLocation.errors?.['required']">End Location is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="endAddress">End Address</label>
+        <input type="text" name="endAddress" class="form-control" formControlName="endAddress"
+          [ngClass]="{ 'is-invalid':endAddress.errors && (endAddress.touched || endAddress.dirty),'is-valid' :endAddress.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="endAddress.errors?.['required']">End Address is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="courierType">Courier Type [Normal,Urgent,Confidential,Fragile]</label>
+        <input type="text" name="courierType" class="form-control" formControlName="courierType"
+          [ngClass]="{ 'is-invalid':courierType.errors && (courierType.touched || courierType.dirty),'is-valid' :courierType.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="courierType.errors?.['required']">Courier Type is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="courierContent">Courier Content [Electronics , Documents, Furniture ]</label>
+        <input type="text" name="courierContent" class="form-control" formControlName="courierContent"
+          [ngClass]="{ 'is-invalid':courierContent.errors && (courierContent.touched || courierContent.dirty),'is-valid' :courierContent.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="courierContent.errors?.['required']">Courier Content is required </strong>
+        </div>
+      </div>
+      <button type='submit' [disabled]="bookmycourierform.invalid" (click)="onSubmit()"
+        class="btn btn-success">Book My Courier</button>
+    </form>
+  </div>
+</div>

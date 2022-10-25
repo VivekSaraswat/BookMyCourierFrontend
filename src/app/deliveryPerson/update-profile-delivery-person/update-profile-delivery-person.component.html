@@ -1,0 +1,77 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button (click)="logout()" class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+      </form>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <h1 class="display-3">Courier Service</h1>
+    <p class="lead">An easy doorstep service for you..</p>
+  </div>
+  
+  <div id="myContent">
+    <div id="myDiv1">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/my-courier">My Courier</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-profile-delivery-person">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/update-profile-delivery-person">Update Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/update-status">Update Status</a>
+        </li>
+      </ul>
+    </div>
+    <div id="myDiv2">
+      <form novalidate [formGroup]="updatedeliverypersonform" (ngSubmit)="updateDeliveryPerson()">
+        <h2>Update Profile</h2>
+        <div class="form-group">
+          <label for="deliveryPersonName">Delivery Person Name</label>
+          <input type="text" name="deliveryPersonName" class="form-control" formControlName="deliveryPersonName"
+            [ngClass]="{ 'is-invalid':deliveryPersonName.errors && (deliveryPersonName.touched || deliveryPersonName.dirty),'is-valid' :deliveryPersonName.valid}">
+          <div class="invalid-feedback">
+            <strong *ngIf="deliveryPersonName.errors?.['required']">Delivery Person Name is required </strong>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">Delivery Person Username</label>
+          <input type="text" name="deliveryPersonUsername" class="form-control" formControlName="deliveryPersonUsername"
+            [ngClass]="{ 'is-invalid':deliveryPersonUsername.errors && (deliveryPersonUsername.touched || deliveryPersonUsername.dirty),'is-valid' :deliveryPersonUsername.valid}">
+          <div class="invalid-feedback">
+            <strong *ngIf="deliveryPersonUsername.errors?.['required']">Username is required </strong>
+            <strong *ngIf="deliveryPersonUsername.errors?.['minlength']">Username minimum length is 5 characters </strong>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="deliveryPersonMobileNo">Delivery Person Mobile Number</label>
+          <input type="text" name="deliveryPersonMobileNo" class="form-control" formControlName="deliveryPersonMobileNo"
+            [ngClass]="{ 'is-invalid':deliveryPersonMobileNo.errors && (deliveryPersonMobileNo.touched || deliveryPersonMobileNo.dirty),'is-valid' :deliveryPersonMobileNo.valid}">
+          <div class="invalid-feedback">
+            <strong *ngIf="deliveryPersonMobileNo.errors?.['required']">Mobile Number is required </strong>
+            <strong *ngIf="deliveryPersonMobileNo.errors?.['pattern']">Mobile Number length should be 10 characters and it cannot begin with numbers less than 6</strong>
+          </div>
+        </div>
+        
+        <button type='submit' [disabled]="updatedeliverypersonform.invalid" class="btn btn-primary">Update</button>
+  
+      </form>
+    </div>
+  </div>
+

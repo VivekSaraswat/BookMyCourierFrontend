@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <h1 class="display-3">Courier Service</h1>
+    <p class="lead">An easy doorstep service for you..</p>
+  </div>
+
+
+<div id="myDiv2" class="row">
+    <form novalidate [formGroup]="registerdeliverypersonform"  (ngSubmit)="registerDeliveryPerson()">
+        <h1>Register Delivery Person</h1>
+        <div class="form-group">
+            <label for="deliveryPersonName">Delivery Person Name</label>
+            <input type="text" name="deliveryPersonName" class="form-control" formControlName="deliveryPersonName"
+                [ngClass]="{ 'is-invalid':deliveryPersonName.errors && (deliveryPersonName.touched || deliveryPersonName.dirty),'is-valid' :deliveryPersonName.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="deliveryPersonName.errors?.['required']">Delivery Person Name is required </strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryPersonUsername">Username</label>
+            <input type="text" name="deliveryPersonUsername" class="form-control" formControlName="deliveryPersonUsername"
+                [ngClass]="{ 'is-invalid':deliveryPersonUsername.errors && (deliveryPersonUsername.touched || deliveryPersonUsername.dirty),'is-valid' :deliveryPersonUsername.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="deliveryPersonUsername.errors?.['required']">Username is required </strong>
+                <strong *ngIf="deliveryPersonUsername.errors?.['minlength']">Username minimum length is 5 characters </strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryPersonMobileNo">DeliveryPerson Mobile Number</label>
+            <input type="text" name="deliveryPersonMobileNo" class="form-control" formControlName="deliveryPersonMobileNo"
+                [ngClass]="{ 'is-invalid':deliveryPersonMobileNo.errors && (deliveryPersonMobileNo.touched || deliveryPersonMobileNo.dirty),'is-valid' :deliveryPersonMobileNo.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="deliveryPersonMobileNo.errors?.['required']">Mobile Number is required </strong>
+                <strong *ngIf="deliveryPersonMobileNo.errors?.['pattern']"> Mobile Number length should be 10 characters and it
+                    cannot begin with numbers less than 6</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryPersonPickupLocation">Delivery Person Pickup Location</label>
+            <input type="deliveryPersonPickupLocation" name="deliveryPersonPickupLocation" class="form-control" formControlName="deliveryPersonPickupLocation"
+                [ngClass]="{ 'is-invalid':deliveryPersonPickupLocation.errors && (deliveryPersonPickupLocation.touched || deliveryPersonPickupLocation.dirty),'is-valid' :deliveryPersonPickupLocation.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="deliveryPersonPickupLocation.errors?.['required']">Delivery Person Pickup Location is required </strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="deliveryPersonPassword">Password</label>
+            <input type="text" name="deliveryPersonPassword" class="form-control" formControlName="deliveryPersonPassword"
+                [ngClass]="{ 'is-invalid':deliveryPersonPassword.errors && (deliveryPersonPassword.touched || deliveryPersonPassword.dirty),'is-valid' :deliveryPersonPassword.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf="deliveryPersonPassword.errors?.['required']">Password is required </strong>
+                <strong *ngIf="deliveryPersonPassword.errors?.['minlength']">Password minimum length is 8 characters </strong>
+
+            </div>
+        </div>
+        <button type='submit' [disabled]="registerdeliverypersonform.invalid" 
+            class="btn btn-primary">Register</button>
+
+    </form>
+</div>

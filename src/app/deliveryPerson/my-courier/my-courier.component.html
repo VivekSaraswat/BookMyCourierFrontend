@@ -1,0 +1,86 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button (click)="logout()" class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+      </form>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <h1 class="display-3">Courier Service</h1>
+    <p class="lead">An easy doorstep service for you..</p>
+  </div>
+  
+  <div id="myContent">
+    <div id="myDiv1">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/my-courier">My Courier</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-profile-delivery-person">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/update-profile-delivery-person">Update Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/update-status">Update Status</a>
+        </li>
+      </ul>
+    </div>
+    <div id="myDiv2">
+      <h2>My Courier</h2>
+      <table class="table table-hover">
+        <tr class="table-info">
+          <th scope="row"> <i class="material-icons">perm_identity</i> Courier ID</th>
+          <td>{{Courier._id}}</td>
+        </tr>
+        <tr>
+          <th scope="row"> <i class="material-icons">location_on</i>  Courier Pickup Location</th>
+          <td>{{Courier.pickupLocation}}</td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row"> <i class="material-icons">location_city</i>  Courier Pickup Address</th>
+          <td>{{Courier.pickupAddress}}</td>
+        </tr>
+        <tr>
+          <th scope="row"> <i class="material-icons">location_on</i>  Courier End Location</th>
+          <td>{{Courier.endLocation}}</td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row"> <i class="material-icons">location_city</i>  Courier End Address</th>
+          <td>{{Courier.endAddress}}</td>
+        </tr>
+        <tr >
+          <th scope="row"> <i class="material-icons">beenhere</i>  Courier Status</th>
+          <td>{{Courier.status}}</td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row"> <i class="material-icons">merge_type</i> Courier Type</th>
+          <td>{{Courier.courierType}}</td>
+        </tr>
+        <tr>
+          <th scope="row"> <i class="material-icons">shop</i> Courier Content</th>
+          <td>{{Courier.courierContent}}</td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row"> <i class="material-icons">person</i> Customer ID</th>
+          <td>{{Courier.customerId}}</td>
+        </tr>
+    </table>
+    </div>
+  </div>
+
+
+

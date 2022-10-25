@@ -1,0 +1,80 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button (click)="logout()" class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+      </form>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <h1 class="display-3">Courier Service</h1>
+    <p class="lead">An easy doorstep service for you..</p>
+  </div>
+  
+  <div id="myContent">
+    <div id="myDiv1">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-profile-admin">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/update-profile-admin">Update Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/manage-customers">Manage Customers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/manage-couriers">Manage Couriers</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/manage-delivery-persons">Manage Delivery Persons</a>
+        </li>
+      </ul>
+    </div>
+    <div id="myDiv2">
+      <h2>Couriers</h2>
+      <p *ngIf="couriers.length <=0" class="no-data text-center">There is no Courier data yet</p>
+      <table class="table table-bordered" *ngIf="couriers.length > 0">
+        <thead>
+          <tr class="table-primary table-info">
+            <th scope="col">Courier ID</th>
+            <th scope="col">Pickup Address</th>
+            <th scope="col">End Address</th>
+            <th scope="col">Courier Type</th>
+            <th scope="'col">Courier Content</th>
+            <th scope="'col">Courier Status</th>
+            <th scope="'col">Customer ID</th>
+            <th scope="col center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cour of couriers;let i = index">
+            <th scope="row">{{cour._id}}</th>
+            <td>{{cour.pickupAddress}} , {{cour.pickupLocation}}</td>
+            <td>{{cour.endAddress}} , {{cour.endLocation}}</td>
+            <td>{{cour.courierType}}</td>
+            <td>{{cour.courierContent}}</td>
+            <td>{{cour.status}}</td>
+            <td>{{cour.customerId}}</td>
+            <td class="text-center edit-block">
+              <span>
+                <button type="button" class="btn btn-danger btn-sm" (click)="removeCouriers(cour,i)">Delete</button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

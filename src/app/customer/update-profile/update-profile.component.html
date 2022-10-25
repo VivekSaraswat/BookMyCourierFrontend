@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">CS</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button (click)="logout()" class="btn btn-danger my-2 my-sm-0" type="submit">LogOut</button>
+    </form>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-3">Courier Service</h1>
+  <p class="lead">An easy doorstep service for you..</p>
+</div>
+
+<div id="myContent">
+  <div id="myDiv1">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/book-my-courier">Book My Courier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/view-profile">View Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/update-profile">Update Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/track-my-order">Track my Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/my-wallet">My Wallet</a>
+      </li>
+    </ul>
+  </div>
+  <div id="myDiv2">
+    <h2>Update Profile</h2>
+    <form novalidate [formGroup]="updatecustomerform" (ngSubmit)="updateCustomer()">
+      <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input type="text" name="customerName" class="form-control" formControlName="customerName"
+          [ngClass]="{ 'is-invalid':customerName.errors && (customerName.touched || customerName.dirty),'is-valid' :customerName.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="customerName.errors?.['required']">Customer Name is required </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" formControlName="username"
+          [ngClass]="{ 'is-invalid':username.errors && (username.touched || username.dirty),'is-valid' :username.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="username.errors?.['required']">Username is required </strong>
+          <strong *ngIf="username.errors?.['minlength']">Username minimum length is 5 characters </strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="customerMobileNo">Customer Mobile Number</label>
+        <input type="text" name="customerMobileNo" class="form-control" formControlName="customerMobileNo"
+          [ngClass]="{ 'is-invalid':customerMobileNo.errors && (customerMobileNo.touched || customerMobileNo.dirty),'is-valid' :customerMobileNo.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="customerMobileNo.errors?.['required']">Mobile Number is required </strong>
+          <strong *ngIf="customerMobileNo.errors?.['pattern']">Mobile Number length should be 10 characters and it cannot begin with numbers less than 6</strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pickupLocation">Pickup Location</label>
+        <input type="text" name="pickupLocation" class="form-control" formControlName="pickupLocation" readonly
+          [ngClass]="{ 'is-invalid':pickupLocation.errors && (pickupLocation.touched || pickupLocation.dirty),'is-valid' :pickupLocation.valid}">
+        <div class="invalid-feedback">
+          <strong *ngIf="pickupLocation.errors?.['required']">Password is required </strong>
+        </div>
+      </div>
+      
+      <button type='submit' [disabled]="updatecustomerform.invalid" class="btn btn-info">Update</button>
+
+    </form>
+  </div>
+
+</div>
